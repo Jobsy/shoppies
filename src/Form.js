@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { Fetch } from "./Fetch";
+import { Input, Button } from "semantic-ui-react";
 
 function Form() {
   const { register, handleSubmit, errors, getValues, formState } = useForm();
@@ -16,18 +17,30 @@ function Form() {
     <>
       <form onSubmit={handleSubmit(onSubmitForm)}>
         <div>
-          <p>Seach for your top 5 movies!</p>
-          <input
+          {/* <input
             type="text"
             placeholder="Enter movie title"
             name="title"
             ref={register({ required: true })}
-          />
-          {errors.title && <p>title is required</p>}
+          /> */}
+          <div className="content3">
+            <input
+              size="big"
+              type="text"
+              placeholder="Search your top movies by title"
+              name="title"
+              ref={register({ required: true })}
+            />
+            {errors.title && <p>title is required</p>}
 
-          <button type="submit" disabled={formState.isSubmitting}>
-            Search
-          </button>
+            <Button
+              type="submit"
+              icon="search"
+              content="Search"
+              size="large"
+              disabled={formState.isSubmitting}
+            ></Button>
+          </div>
         </div>
       </form>
       <Fetch title={getValues(["title"])} />
