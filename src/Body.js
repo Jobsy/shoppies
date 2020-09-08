@@ -9,6 +9,7 @@ import {
   Segment,
   Item,
   Divider,
+  Button,
 } from "semantic-ui-react";
 
 import Nomination from "./Nomination";
@@ -60,9 +61,9 @@ const Body = (props) => {
   //   ]);
   // };
 
-  const disableNominatedMovie = movieNominated.find((mNominated) => {
-    return mNominated.movieID == props.data.imdbID;
-  });
+  // const disableNominatedMovie = movieNominated.find((mNominated) => {
+  //   return mNominated.movieID == props.data.imdbID;
+  // });
   // {
   //   props.data.Search.map((movie) => {
   //     console.log("movie111111: ", movie);
@@ -79,70 +80,84 @@ const Body = (props) => {
   return (
     <>
       {console.log("props from body: ", props)}
-      {props.data
-        ? props.data.Search.map((movie) => {
-            console.log("movie111111: ", movie);
-            console.log("movie111111: ", movie.Poster);
-            return (
-              <>
-                {movieNominated.length > 4 ? (
-                  <div className="banner">
-                    <p>Nomination Limit Reached!!! Thanks</p>
-                  </div>
-                ) : (
-                  ""
-                )}
-                <div className="content1">
-                  <Image src={movie.Poster} size="tiny" verticalAlign="top" />
-                  {/* Title: {movie.Title}, ID: {movie.imdbID}, */}
-                  <div className="content2">
-                    <span>
-                      {movie.Title}
-                      {movie.Year}
-                    </span>
-                    <span>{movie.Awards}</span>
-                    <span>{movie.imdbRating}</span>
-                    <span>{movie.Plot}</span>
-                    {/* {props.data.Search.map((movie) => {
+      <div className="content3">
+        {props.data ? (
+          <div>
+            <h3>Results for {props.searchKeyWork}</h3>
+            <div className="content1">
+              {props.data.Search.map((movie) => {
                 console.log("movie111111: ", movie);
-              })} */}
+                console.log("movie111111: ", movie.Poster);
+                const disableNominatedMovie = movieNominated.find(
+                  (mNominated) => {
+                    return mNominated.movieID == movie.imdbID;
+                  }
+                );
+                return (
+                  <>
                     {movieNominated.length > 4 ? (
-                      <button disabled>Nominate</button>
-                    ) : disableNominatedMovie ? (
-                      <button disabled>Nominate</button>
+                      <div className="banner">
+                        <p>Nomination Limit Reached!!! Thanks</p>
+                      </div>
                     ) : (
-                      (console.log(
-                        "disableNominatedMovie1452: ",
-                        disableNominatedMovie
-                      ),
-                      (
-                        // (<button onClick={handleSubmit}>Nominate</button>))
-                        <button
-                          onClick={(e) =>
-                            handleSubmit(
-                              e,
-                              movieNominated,
-                              setMovieNominated,
-                              movie
-                            )
-                          }
-                        >
-                          Nominate
-                        </button>
-                      ))
+                      ""
                     )}
-                  </div>
-                  <div>
-                    <Divider />
-                  </div>
-                </div>
-              </>
-            );
-          })
-        : console.log("nothing")}
+
+                    <Card>
+                      <Image src={movie.Poster} wrapped ui={false} />
+                      <Card.Content>
+                        <Card.Header> {movie.Title}</Card.Header>
+                        <Card.Meta>
+                          <span className="date">Release in {movie.Year}</span>
+                        </Card.Meta>
+                        <Card.Description>{movie.Type}</Card.Description>
+                      </Card.Content>
+                      <Card.Content extra>
+                        {movieNominated.length > 4 ? (
+                          // <button disabled>Nominate</button>
+                          <Button disabled>Nominate</Button>
+                        ) : disableNominatedMovie ? (
+                          // <button disabled>Nominate</button>
+                          <Button disabled>Nominate</Button>
+                        ) : (
+                          (console.log(
+                            "disableNominatedMovie1452: ",
+                            disableNominatedMovie
+                          ),
+                          (
+                            <Button
+                              onClick={(e) =>
+                                handleSubmit(
+                                  e,
+                                  movieNominated,
+                                  setMovieNominated,
+                                  movie
+                                )
+                              }
+                            >
+                              Nominate
+                            </Button>
+                          ))
+                        )}
+                        {/* <a>
+                      <Icon name="user" />
+                      22 Friends
+                    </a> */}
+                      </Card.Content>
+                    </Card>
+                  </>
+                );
+              })}
+            </div>
+          </div>
+        ) : (
+          console.log("nothing")
+        )}
+      </div>
       <>
-        <div className="content3">
+        <div className="content2">
           {console.log("movieNominated: ", movieNominated)}
+          <h1>Your Nominations</h1>
           {movieNominated.map((mNominated) => {
             return (
               <Nomination
