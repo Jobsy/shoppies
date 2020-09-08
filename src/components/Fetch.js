@@ -11,7 +11,9 @@ export const Fetch = (props) => {
         return;
       } else {
         axios
-          .get(`http://www.omdbapi.com/?s=${props.title.title}&apikey=6c37230a`)
+          .get(
+            `https://www.omdbapi.com/?s=${props.title.title}&apikey=6c37230a`
+          )
           .then((res) => {
             setData(res);
           });
