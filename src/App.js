@@ -24,10 +24,10 @@ function App() {
     //   </header>
     // </div>
     <>
-      Working, Yeah!!!!!!!!!!!!!!!!!!
+      <h1>The Shoppies</h1>
+      <Form />
       <Body />
       {/* <Fetch /> */}
-      <Form />
     </>
   );
 }
