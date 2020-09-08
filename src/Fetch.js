@@ -5,14 +5,14 @@ import axios from "axios";
 import Body from "./Body";
 
 export const Fetch = (props) => {
-  const [data, setData] = useState({});
+  const [data, setData] = useState([]);
   useEffect(() => {
     (function fetchData() {
       if (!props.title.title) {
         return;
       } else {
         axios
-          .get(`http://www.omdbapi.com/?t=${props.title.title}&apikey=6c37230a`)
+          .get(`http://www.omdbapi.com/?s=${props.title.title}&apikey=6c37230a`)
           .then((res) => {
             setData(res);
           });
