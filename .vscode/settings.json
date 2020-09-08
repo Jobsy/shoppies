@@ -1,0 +1,4 @@
+{
+    "html.format.indentInnerHtml": true,
+    "eslint.format.enable": true
+}
