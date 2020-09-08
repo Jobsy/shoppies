@@ -30,7 +30,7 @@ export const Fetch = (props) => {
       ) : (
         <>
           {console.log("data from fetch: ", data.data)}
-          {<Body data={data.data} />}
+          {<Body data={data.data} searchKeyWork={props.title.title} />}
         </>
       )}
     </>
