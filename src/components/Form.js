@@ -6,6 +6,7 @@ import { Fetch } from "./Fetch";
 
 function Form() {
   const { register, handleSubmit, errors, getValues, formState } = useForm();
+  // eslint-disable-next-line
   const [formData, setFormData] = useState();
 
   const onSubmitForm = (e) => {
