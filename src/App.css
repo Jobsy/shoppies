@@ -38,16 +38,19 @@
 } */
 .content1 {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  /* align-items: center; */
 }
 .content2 {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 .content3 {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
 }
 .banner {
   background-color: black;
@@ -63,4 +66,57 @@
   font-size: 30px;
   margin-top: 60px;
   color: whitesmoke;
+}
+.content1 .ui.card {
+  margin: 1em !important;
+}
+
+.content1 .ui.cards > .card {
+  margin: 10px !important;
+}
+
+.content1 .ui.card,
+.content1 .ui.cards > .card {
+  max-width: 20% !important;
+}
+
+h1:first-child {
+  text-align: center;
+  margin-top: 20px !important;
+}
+h3:first-child {
+  /* text-align: center; */
+  margin-left: 40px;
+  margin-top: 20px !important;
+}
+
+input[type="text"] {
+  width: 70%;
+  padding: 12px 20px;
+  margin-right: 15px;
+  box-sizing: border-box;
+  border: 3px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  border-radius: 4px;
+  outline: none;
+}
+
+input[type="text"]:focus {
+  border: 3px solid #555;
+  border-radius: 4px;
+}
+
+::-webkit-input-placeholder {
+  /* Edge */
+  font-size: 14px;
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer */
+  font-size: 14px;
+}
+
+::placeholder {
+  font-size: 20px;
 }
