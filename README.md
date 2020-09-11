@@ -6,7 +6,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 This is a simple ReactJs App that utilises the free backend API built by [The Open Movie Database (OMDb API)](http://www.omdbapi.com/).
 
-The App when successfully launched can be used to search for movies, and also for nominating top favourite movies
+The App when successfully launched can be used to search for movies, and also for nominating your top favourite movies
 
 ## Installing locally
 
