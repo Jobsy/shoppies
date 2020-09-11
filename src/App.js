@@ -7,7 +7,12 @@ import Form from "./components/Form";
 function App() {
   return (
     <>
-      <h1>The Shoppies</h1>
+      <div id="loaderDiv">
+        <div className="loader"></div>
+      </div>
+      <div>
+        <h1>The Shoppies</h1>
+      </div>
       <Form />
       <Body />
     </>
