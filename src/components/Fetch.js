@@ -32,7 +32,7 @@ export const Fetch = (props) => {
         }
       }
     })();
-  }, [props.title.title]);
+  }, [props.title.title, spinner]);
 
   return (
     <>
