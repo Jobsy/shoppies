@@ -5,18 +5,26 @@ import Body from "./Body";
 
 export const Fetch = (props) => {
   const [data, setData] = useState([]);
+
   useEffect(() => {
     (function fetchData() {
       if (!props.title.title) {
         return;
       } else {
-        axios
-          .get(
-            `https://www.omdbapi.com/?s=${props.title.title}&apikey=6c37230a`
-          )
-          .then((res) => {
-            setData(res);
-          });
+        try {
+          axios
+            .get(
+              `https://www.omdbapi.com/?s=${props.title.title}&apikey=6c37230a`
+            )
+            .then((res) => {
+              setData(res);
+            })
+            .catch((err) => {
+              console.log(err);
+            });
+        } catch (error) {
+          console.log("error from fetch: ", error);
+        }
       }
     })();
   }, [props.title.title]);
