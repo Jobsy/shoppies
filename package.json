@@ -3,11 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@cypress/instrument-cra": "^1.3.1",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "axios": "^0.20.0",
     "font-awesome": "^4.7.0",
+    "mutationobserver-shim": "^0.3.7",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-hook-form": "^6.7.2",
@@ -17,10 +19,14 @@
     "wait-on": "^5.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "react-scripts -r @cypress/instrument-cra start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start-cypress-test": "npm run cy:run",
+    "eject": "react-scripts eject",
+    "start-server": "npm start",
+    "cy:run": "cypress run",
+    "cypress:open": "cypress open",
+    "test": "start-server-and-test start http://localhost:3000 start-cypress-test"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -35,6 +41,21 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@cypress/code-coverage": "^3.8.1",
+    "check-code-coverage": "^1.9.3",
+    "cypress": "^5.1.0",
+    "start-server-and-test": "^1.11.3"
+  },
+  "nyc": {
+    "include": [
+      "app/**/*.js"
+    ],
+    "exclude": [
+      "app/util.js",
+      "src/serviceWorker.js"
     ]
   }
 }
