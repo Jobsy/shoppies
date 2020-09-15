@@ -1,6 +1,6 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app)
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/2fc21282-c48d-4fe5-8877-2acdc7a49d4b/deploy-status)](https://app.netlify.com/sites/suspicious-murdock-524721/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/2fc21282-c48d-4fe5-8877-2acdc7a49d4b/deploy-status)](https://app.netlify.com/sites/suspicious-murdock-524721/deploys) ![check-code-coverage](https://img.shields.io/badge/code--coverage-34.15%25-red)
 
 ## Shopify
 
