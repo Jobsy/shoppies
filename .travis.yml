@@ -1,6 +1,6 @@
 env:
-  global:
-    - CC_TEST_REPORTER_ID=273da1517ed1220cb56617391c7edd9b721c3510a8604f7f44dcf62c652c4d40
+# global:
+#   - CC_TEST_REPORTER_ID=273da1517ed1220cb56617391c7edd9b721c3510a8604f7f44dcf62c652c4d40
 language: node_js
 
 node_js:
@@ -31,10 +31,10 @@ install:
   - npm install --save-dev start-server-and-test
   - npm run build
 
-before_script:
-  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-  - chmod +x ./cc-test-reporter
-  - ./cc-test-reporter before-build
+# before_script:
+#   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+#   - chmod +x ./cc-test-reporter
+#   - ./cc-test-reporter before-build
 
 script:
   # start server in the background
@@ -45,8 +45,8 @@ script:
   # this avoids flake in Travis jobs
   - kill $(jobs -p) || true
 
-after_script:
-  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+# after_script:
+#   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
 
 notifications:
   email: false
