@@ -44,7 +44,7 @@ script:
   # update code coverage
   - npx update-badge
   # set code coverage GitHub commits status
-  - npx set-gh-status
+  # - npx set-gh-status
   # after all tests finish running we need
   # to kill all background jobs (like "npm start &")
   # this avoids flake in Travis jobs
