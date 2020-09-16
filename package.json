@@ -9,7 +9,6 @@
     "@testing-library/user-event": "^7.2.1",
     "axios": "^0.20.0",
     "font-awesome": "^4.7.0",
-    "mutationobserver-shim": "^0.3.7",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-hook-form": "^6.7.2",
@@ -45,16 +44,14 @@
   },
   "devDependencies": {
     "@cypress/code-coverage": "^3.8.1",
+    "babel-plugin-istanbul": "^6.0.0",
     "check-code-coverage": "^1.9.3",
     "cypress": "^5.1.0",
+    "nyc": "^15.1.0",
     "start-server-and-test": "^1.11.3"
   },
   "nyc": {
-    "include": [
-      "app/**/*.js"
-    ],
     "exclude": [
-      "app/util.js",
       "src/serviceWorker.js"
     ]
   }
