@@ -1,6 +1,8 @@
 env:
   global:
-    - CC_TEST_REPORTER_ID=273da1517ed1220cb56617391c7edd9b721c3510a8604f7f44dcf62c652c4d40
+    - CC_TEST_REPORTER_ID=2bc72b947d3cbb6f8c26b2bbc6e22c2c43c8b9a0b9caae115d18bf06b7ea91ed
+    - GITHUB_TOKEN: $GITHUB_TOKEN
+
 language: node_js
 
 node_js:
