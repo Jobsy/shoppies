@@ -48,6 +48,7 @@ script:
   - npx update-badge
   # set code coverage GitHub commits status
   - npx set-gh-status
+    env: $GITHUB_TOKEN
 
 after_script:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
