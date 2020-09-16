@@ -40,16 +40,14 @@ script:
   # start server in the background
   # run all Cypress tests and record on the dashboard
   - npm run test
-  # after all tests finish running we need
-  # to kill all background jobs (like "npm start &")
-  # this avoids flake in Travis jobs
-  - kill $(jobs -p) || true
   # update code coverage
   - npx update-badge
   # set code coverage GitHub commits status
   - npx set-gh-status
-
-env: $GITHUB_TOKEN
+  # after all tests finish running we need
+  # to kill all background jobs (like "npm start &")
+  # this avoids flake in Travis jobs
+  - kill $(jobs -p) || true
 
 after_script:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
