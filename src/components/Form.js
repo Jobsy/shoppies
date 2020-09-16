@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Button } from "semantic-ui-react";
-// import "mutationobserver-shim";
 
 import { Fetch } from "./Fetch";
 
