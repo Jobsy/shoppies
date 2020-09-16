@@ -25,9 +25,13 @@ function Form() {
               type="text"
               placeholder="Search your top movies by title"
               name="title"
+              id="title"
+              className="inputField"
               ref={register({ required: true })}
             />
-            {errors.title && <p>title is required</p>}
+            {errors.title && (
+              <p className="errorPara">Movie title is required</p>
+            )}
 
             <Button
               type="submit"
@@ -35,6 +39,7 @@ function Form() {
               content="Search"
               size="large"
               disabled={formState.isSubmitting}
+              className="submit-btn"
             ></Button>
           </div>
         </div>
