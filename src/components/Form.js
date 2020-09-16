@@ -5,8 +5,6 @@ import { Button } from "semantic-ui-react";
 
 import { Fetch } from "./Fetch";
 
-// global.MutationObserver = window.MutationObserver;
-
 function Form() {
   const { register, handleSubmit, errors, getValues, formState } = useForm();
   // eslint-disable-next-line
